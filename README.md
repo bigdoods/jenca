@@ -1,25 +1,27 @@
-[![Build Status](https://img.shields.io/travis/madhums/node-express-mongoose.svg?style=flat)](https://travis-ci.org/madhums/node-express-mongoose)
-[![Gittip](https://img.shields.io/gratipay/madhums.svg?style=flat)](https://www.gratipay.com/madhums/)
-[![Dependencies](https://img.shields.io/david/madhums/node-express-mongoose.svg?style=flat)](https://david-dm.org/madhums/node-express-mongoose)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/madhums/node-express-mongoose?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+# Jenca
 
-## Node Express Mongoose
+## API Docs
 
-A boilerplate application for building web apps using express, mongoose and passport.
+### Users
 
-Read the [wiki](https://github.com/madhums/node-express-mongoose/wiki) to understand how the application is structured.
+#### Register
+**Url**: /api/users/ (POST)
 
-## Installation and Usage
+Params:
+- `name`
+- `email`
+- `password`
 
-    $ git clone https://github.com/madhums/node-express-mongoose.git
-    $ cd node-express-mongoose
-    $ npm install
-    $ npm start
+### Digital Ocean
 
-Add routes (`config/routes.js`), create models (`app/models/`), views (`app/views/`) and controllers (`app/controllers/`).
+#### Create droplet
 
-Checkout the [apps that are built using this approach](https://github.com/madhums/node-express-mongoose/wiki/Apps-built-using-this-approach)
+**Url**: /api/droplets (POST)
 
-## License
+- `name`
+- `region`
+- `size`
 
-MIT
+#### Get all regions
+
+**Url**: /api/droplets/regions (GET)

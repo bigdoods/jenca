@@ -14,9 +14,10 @@ var droplets = require('droplets')
 module.exports = function (app, passport) {
 
   app.get('/', home.index);
-  app.post('/users', users.create);
-  app.get('/users/:id', users.get);
-  app.get('/droplets/regions', droplets.regions)
+  app.post('/api/users', users.create);
+  app.get('/api/users/:id', users.get);
+  app.post('/api/droplets', droplets.create)
+  app.get('/api/droplets/regions', droplets.regions)
   /**
    * Error handling
    */

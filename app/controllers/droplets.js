@@ -2,16 +2,17 @@
 /*!
  * Module dependencies.
  */
+var config = require('config')
 var DIGITALOCEAN = require('dropletapi').Droplets;
-var digitalocean = new DIGITALOCEAN('89d81b8f706e27f8e4c3921f2b8cc4069bc3d20f549f1b6cd02755bd982b58aa');
+var digitalocean = new DIGITALOCEAN(config.DOKey);
 
 var DODigitalOcean = require('do-wrapper')
-var api = new DODigitalOcean('89d81b8f706e27f8e4c3921f2b8cc4069bc3d20f549f1b6cd02755bd982b58aa')
+var api = new DODigitalOcean(config.DOKey)
 
 exports.create = function (req, res) {
 	var myNewDropletData = {
 	  "name": req.body.name,
-	  "region": req.body.regions,
+	  "region": req.body.region,
 	  "size": req.body.size,
 	  "image": "ubuntu-14-04-x64",
 	  "ssh_keys": null,

@@ -4,6 +4,7 @@
  */
 
 module.exports = {
+  DOKey: '89d81b8f706e27f8e4c3921f2b8cc4069bc3d20f549f1b6cd02755bd982b58aa',
   db: 'mongodb://localhost/your_project_development',
   facebook: {
     clientID: 'APP_ID',
