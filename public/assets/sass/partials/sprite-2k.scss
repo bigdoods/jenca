@@ -1,0 +1,77 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+*/
+$icon-add2k-x: 62px;
+$icon-add2k-y: 170px;
+$icon-add2k-offset-x: -62px;
+$icon-add2k-offset-y: -170px;
+$icon-add2k-width: 38px;
+$icon-add2k-height: 38px;
+$icon-add2k-total-width: 435px;
+$icon-add2k-total-height: 224px;
+$icon-add2k-image: '/assets/img/sprite-2k.png';
+$icon-add2k: 62px 170px -62px -170px 38px 38px 435px 224px '/assets/img/sprite-2k.png';
+$icon-alert2k-x: 0px;
+$icon-alert2k-y: 170px;
+$icon-alert2k-offset-x: 0px;
+$icon-alert2k-offset-y: -170px;
+$icon-alert2k-width: 60px;
+$icon-alert2k-height: 54px;
+$icon-alert2k-total-width: 435px;
+$icon-alert2k-total-height: 224px;
+$icon-alert2k-image: '/assets/img/sprite-2k.png';
+$icon-alert2k: 0px 170px 0px -170px 60px 54px 435px 224px '/assets/img/sprite-2k.png';
+$icon-logo2k-x: 0px;
+$icon-logo2k-y: 0px;
+$icon-logo2k-offset-x: 0px;
+$icon-logo2k-offset-y: 0px;
+$icon-logo2k-width: 435px;
+$icon-logo2k-height: 168px;
+$icon-logo2k-total-width: 435px;
+$icon-logo2k-total-height: 224px;
+$icon-logo2k-image: '/assets/img/sprite-2k.png';
+$icon-logo2k: 0px 0px 0px 0px 435px 168px 435px 224px '/assets/img/sprite-2k.png';
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}

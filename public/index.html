@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Jenca - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body>
+    <div id="app" class="home"></div>
+    <script data-template="home" type="x-tmpl-mustache">
+      <div id="home">
+        <div class="home-logo"></div>
+        <div class="home-buttons">
+        {{#buttons}}
+          <div class="button home-button" data-navigate="{{link}}">{{text}}</div>
+        {{/buttons}}
+        </div>
+      </div>
+    </script>
+    <script data-template="sign-up" type="x-tmpl-mustache">
+      <div id="sign-up">
+        <form>
+          <input type="text" name="username">
+          <input type="password" name="password">
+          <input type="submit" class="submit">
+        </form>
+      </div>
+    </script>
+    <script data-template="login" type="x-tmpl-mustache">
+      <div id="login">
+        <form>
+          <input type="text" name="username">
+          <input type="password" name="password">
+          <input type="submit" class="submit">
+        </form>
+      </div>
+    </script>
+    <script data-main="/assets/scripts/main" src="/assets/scripts/require.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+@mixin sprite-background-size($sprite) {
+  background-size: nth($sprite, 7) nth($sprite, 8);
+}
+
+@mixin sprite-retina($sprite, $sprite2k) {
+	@include sprite($sprite);
+
+	@media (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 1.25/1), (min--moz-device-pixel-ratio: 1.25), (-moz-min-device-pixel-ratio: 1.25), (-ms-min-device-pixel-ratio: 1.25), (min-device-pixel-ratio: 1.25), (min-resolution: 120dpi), (min-resolution: 1.25dppx) {
+    @include sprite-image($sprite2k);
+    @include sprite-background-size($sprite);
+  }
+}

@@ -1,0 +1,17 @@
+.button {
+  background: $blue;
+
+  padding: 12px 24px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+
+  color: $white;
+  font-weight: 400;
+
+  text-transform: uppercase;
+
+  float: left;
+
+  @include prefix('border-radius', '50px');
+}

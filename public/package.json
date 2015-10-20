@@ -1,0 +1,10 @@
+{
+  "name": "bim-script",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.4"
+  },
+  "dependencies": {
+    "grunt-spritesmith": "~2.1.1"
+  }
+}
