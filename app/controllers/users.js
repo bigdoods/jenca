@@ -14,6 +14,7 @@ exports.get = function (req, res) {
 exports.create = function (req, res) {
 	var newUser = new User()
 	newUser.name = req.body.name
+	newUser.username = req.body.username
 	newUser.email = req.body.email
 	newUser.salt = makeSalt()
 	newUser.hashed_password = hashPassword(req.body.password, newUser.salt)

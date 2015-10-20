@@ -30,7 +30,10 @@ define([ 'jquery',
 
     $('#sign-up').find('.submit').click(function(e) {
       e.preventDefault();
-      console.log($('#sign-up').find('form').serializeArray());
+      // console.log($('#sign-up').find('form').serializeArray());
+      $.post('/api/users', $('#sign-up').find('form').serialize()).done(function( data ) {
+        console.log(data);
+      });
     });
 
   });
