@@ -10,7 +10,7 @@ var DODigitalOcean = require('do-wrapper')
 var api = new DODigitalOcean(config.DOKey)
 
 exports.create = function (req, res) {
-	var myNewDropletData = {
+	var dropletData = {
 	  "name": req.body.name,
 	  "region": req.body.region,
 	  "size": req.body.size,
@@ -18,16 +18,17 @@ exports.create = function (req, res) {
 	  "ssh_keys": null,
 	  "backups": false,
 	  "ipv6": true,
-	  "user_data": null,
+	  "user_data": "#cloud-config\nruncmd:\n  - wget -qO- https://raw.githubusercontent.com/jenca-cloud/jenca/master/install.sh | sh\n",
 	  "private_networking": null
 	}
-	 
-	digitalocean.createDroplet(myNewDropletData, function (error, result) {
+
+	digitalocean.createDroplet(dropletData, function (error, result) {
     if (error) {
-        res.send(400, error)
+      res.send(400, error)
     }
     else {
-        res.send(400, result)
+      console.log(result)
+      res.send(201, result)
     }
   });
 };
