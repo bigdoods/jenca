@@ -18,7 +18,7 @@ exports.create = function (req, res) {
 	  "ssh_keys": null,
 	  "backups": false,
 	  "ipv6": true,
-	  "user_data": "#cloud-config\nruncmd:\n  - wget -qO- https://raw.githubusercontent.com/jenca-cloud/jenca/master/install.sh | sh\n",
+	  "user_data": "#cloud-config\nruncmd:\n  - wget -qO- https://raw.githubusercontent.com/jenca-cloud/jenca-cloud/master/scripts/install.sh | sh\n",
 	  "private_networking": null
 	}
 
